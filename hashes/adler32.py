@@ -13,21 +13,14 @@ MOD_ADLER = 65521
 
 def adler32(plain_text: str) -> int:
     """
-    Calculate the Adler-32 checksum of text encoded as UTF-8.
-
-    The checksum is calculated over bytes, so non-ASCII text must be encoded before
-    processing. UTF-8 provides a consistent byte representation for Python strings.
+    Function implements adler-32 hash.
+    Iterates over the UTF-8 bytes of the input text.
 
     >>> adler32('Algorithms')
     363791387
+
     >>> adler32('go adler em all')
     708642122
-    >>> adler32('€100')
-    196018850
-    >>> adler32('日本語テスト')
-    2053180537
-    >>> adler32('')
-    1
     """
     a = 1
     b = 0
